@@ -1,0 +1,20 @@
+{
+  "name": "signup-app",
+  "version": "0.1.0",
+  "description": "sinup app with express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "signup",
+    "app",
+    "node.js",
+    "express.js"
+  ],
+  "author": "espython",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
