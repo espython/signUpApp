@@ -1,8 +1,15 @@
 var express = require('express');
 var app = express();
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
 var path = require("path");
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+
+//app.use(express.static(__dirname + '/public'));
+
+app.use('/public', express.static('./public'));
+
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
+
+//routing
 app.get('/signup', function(req, res) {
     res.sendFile(path.join(__dirname + '/signup.html'));
 });
