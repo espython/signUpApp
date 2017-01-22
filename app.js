@@ -9,7 +9,22 @@ app.use('/public', express.static('./public'));
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-//routing
+var mongoose = require('mongoose');
+
+//Connect to the database
+mongoose.connect('mongodb:  url');
+//Create a schema -this is like a blueprint .
+
+var userSchema = new mongoose.Schema({
+    username: String,
+    email: String,
+    password: String
+
+});
+
+var usersData = mongoose.model('usersdata', userSchema);
+
+
 app.get('/signup', function(req, res) {
     res.sendFile(__dirname + '/signup.html');
 });
@@ -18,6 +33,11 @@ app.post('/signup', urlencodedParser, function(req, res) {
     var username = req.body.username;
     var email = req.body.email;
     var password = req.body.password;
+
+    var saveUserData = usersData(req.body).save(function(err, data) {
+
+        if (err) throw err;
+    });
     console.log('Name: ' + username);
     console.log('Email: ' + email);
     console.log('Password: ' + password);
