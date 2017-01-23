@@ -1,9 +1,9 @@
 $(document).ready(function() {
 
-    $(".clickme").click(function() {
-        alert("thanks alot");
+    $("#clickButton").click(function() {
+        $('#myModal').modal('show');
 
 
-        console.log("thanks a lot");
+
     });
 });

@@ -12,7 +12,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 var mongoose = require('mongoose');
 
 //Connect to the database
-mongoose.connect('mongodb:  url');
+mongoose.connect('mongodb:url');
 //Create a schema -this is like a blueprint .
 
 var userSchema = new mongoose.Schema({
@@ -42,7 +42,7 @@ app.post('/signup', urlencodedParser, function(req, res) {
     console.log('Email: ' + email);
     console.log('Password: ' + password);
 
-    res.json(req.body);
+    // res.json(req.body);
 
 });
 
